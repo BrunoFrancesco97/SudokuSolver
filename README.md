@@ -83,11 +83,12 @@ only in a smaller part of it.
 So, starting from a sudoku, we simplify it as much as possible by applying
 both categories of constraints, if the matrix is complete and correct then
 is returned, otherwise is checked if the content of the sudoku contains some
-error (then backtrack), if it's not complete and is correct then the algorithm
-chooses a Most Constrained Variable (a non valued cell with the least number
+error (then **backtrack**), if it's not complete and is correct then the algorithm
+chooses a **Most Constrained Variable** (a non valued cell with the least number
 of choices) and a random value from its choices is assigned to the cell, so the
 new sudoku will have at least a new value dierent compared to the input
-matrix. This algorithm is then called recursively giving to it as input the
+matrix.
+This algorithm is then called recursively giving to it as input the
 output sudoku made above and it will stop only when a correct solution is
 found or if there are no correct answers to the initial input matrix.
 
@@ -97,12 +98,11 @@ different sudokus of various difficulties, in particular each resolution of a
 single sudoku is repeated 100 times in order to have a better approximation
 of the results.
 By considering:
-- Exec.time: how long the solver takes to end the execution of the algorithm;
-- Avg Random Choice: how many random choices are performed by
-- the solver in order to obtain a simpler matrix since cells can't be simplied more;
-- Avg Backtrack calls: how many backtracking calls are performed by the solver in order to return to the point when recursion was called, so to make a new random choice with a different value;
-- Success rate: how many solutions returned from the algorithm are correct (given as percentage);
-- Probability updates: how many times the probability matrix is updated;
+- **Exec.time**: how long the solver takes to end the execution of the algorithm;
+- **Avg Random Choice**: how many random choices are performed by the solver in order to obtain a simpler matrix since cells can't be simplied more;
+- **Avg Backtrack calls**: how many backtracking calls are performed by the solver in order to return to the point when recursion was called, so to make a new random choice with a different value;
+- **Success rate**: how many solutions returned from the algorithm are correct (given as percentage);
+- **Probability updates**: how many times the probability matrix is updated;
 
 I've obtained the following results:
 
@@ -134,9 +134,9 @@ So basically, the relaxation labelling solver takes as input an initial array of
 Performances of the solver are calculated by giving as input to the solver different sudokus of various difficulties, in particular each resolution of a single sudoku is repeated 100 times in order to have a better approximation of the results.
 
 By considering:
-- Exec.time: how long the solver takes to end the execution of the algorithm;
-- Success rate: how many solutions returned from the algorithm are correct (given as percentage);
-- Probability updates: how many times the probability matrix is updated;
+- **Exec.time**: how long the solver takes to end the execution of the algorithm;
+- **Success rate**: how many solutions returned from the algorithm are correct (given as percentage);
+- **Probability updates**: how many times the probability matrix is updated;
 
 I've obtained the following performances:
 
