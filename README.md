@@ -1,5 +1,5 @@
 
-Assignment solved for Artificial Intelligence: Knowledge Representation and planning course at Università Ca'Foscari University.
+Assignment solved for "Artificial Intelligence: Knowledge Representation and planning" course at Università Ca'Foscari University.
 
 ### **Chapter 1**
 #  Sudoku
