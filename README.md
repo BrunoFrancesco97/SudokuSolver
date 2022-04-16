@@ -8,8 +8,6 @@ Sudoku is a 1984 Japan game that needs a bit of logic in order to solve it. It i
 The goal of the game is to fill with a proper digit the cells without an already setted value, thus to have as a result a matrix with no empty cells.
 Rules are very easy, if a box, row or column has already a digit *X* inside it, then all other cells inside that specic row, column or box can't have the same value *X*.
   
-[![Sudoku](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/1200px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Sudoku")](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/1200px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Sudoku")
-Sudoku
 
 ### **Chapter 2**
 # Requirements
