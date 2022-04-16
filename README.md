@@ -77,30 +77,17 @@ By watching the figure we can notice how there are two cells with choices 6 and 
 ### Chapter 4
 # Constraint Propagation and Backtracking
 #### 4.1 Implementation
-The aim of this technique applied to this task is to propagate constraints
-through recursion over a sudoku in order to simplify the domain of a cell and
-don't search the result of a cell inside the entire domain of the variable but
-only in a smaller part of it.
-So, starting from a sudoku, we simplify it as much as possible by applying
-both categories of constraints, if the matrix is complete and correct then
-is returned, otherwise is checked if the content of the sudoku contains some
-error (then **backtrack**), if it's not complete and is correct then the algorithm
-chooses a **Most Constrained Variable** (a non valued cell with the least number
-of choices) and a random value from its choices is assigned to the cell, so the
-new sudoku will have at least a new value dierent compared to the input
-matrix.
-This algorithm is then called recursively giving to it as input the
-output sudoku made above and it will stop only when a correct solution is
-found or if there are no correct answers to the initial input matrix.
+The aim of this technique applied to this task is to propagate constraints through recursion over a sudoku in order to simplify the domain of a cell and
+don't search the result of a cell inside the entire domain of the variable but only in a smaller part of it.
+So, starting from a sudoku, we simplify it as much as possible by applying both categories of constraints, if the matrix is complete (A sudoku is complete iff all cells of the sudoku have an assigned value) and correct then is returned, otherwise is checked if the content of the sudoku contains some error (then **backtrack**), if it's not complete and is correct then the algorithm chooses a **Most Constrained Variable** (a non valued cell with the least number of choices) and a random value from its choices is assigned to the cell, so the new sudoku will have at least a new value different compared to the input matrix.
+This algorithm is then called recursively giving to it as input the output sudoku made above and it will stop only when a correct solution is found or if there are no correct answers to the initial input matrix.
 
 #### 4.2 Performance
-Performances of the solver are calculated by giving as input to the solver
-different sudokus of various difficulties, in particular each resolution of a
-single sudoku is repeated 100 times in order to have a better approximation
-of the results.
+Performances of the solver are calculated by giving as input to the solver different sudokus of various difficulties, in particular each resolution of a
+single sudoku is repeated 100 times in order to have a better approximation of the results.
 By considering:
 - **Exec.time**: how long the solver takes to end the execution of the algorithm;
-- **Avg Random Choice**: how many random choices are performed by the solver in order to obtain a simpler matrix since cells can't be simplied more;
+- **Avg Random Choice**: how many random choices are performed by the solver in order to obtain a simpler matrix since cells can't be simplified more;
 - **Avg Backtrack calls**: how many backtracking calls are performed by the solver in order to return to the point when recursion was called, so to make a new random choice with a different value;
 - **Success rate**: how many solutions returned from the algorithm are correct (given as percentage);
 - **Probability updates**: how many times the probability matrix is updated;
@@ -116,7 +103,7 @@ I've obtained the following results:
 | **Hard**  | *60.53ms* | 3 | 1 | 100% |
 | **AI Escargot** | *675.0ms* | 63 | 29 | 100% |
 
-As we can read, at an higher difficulty of the sudoku corresponds an higher execution time, the maximum value is obtained by solving AI Escargot sudoku (the most difficult known!), also success rate is for all categories equals to 100%. Another thing we can observe is that at an higher diculty corresponds also an higher possibility to backtrack and at the same time to choose a random value from the choices of a cell in order to propagate the matrix with a new value fixed.
+As we can read, at an higher difficulty of the sudoku corresponds an higher execution time, the maximum value is obtained by solving AI Escargot sudoku (the most difficult known!), also success rate is for all categories equals to 100%. Another thing we can observe is that at an higher difficulty corresponds also an higher possibility to backtrack and at the same time to choose a random value from the choices of a cell in order to propagate the matrix with a new value fixed.
 In conclusion constraing propagation and backtracking solver is pretty good for solving sudokus because it has a 100% success rate and all execution are made within less than one second, even the hardest sudoku ever!
 
 ### Chapter 5
@@ -129,7 +116,7 @@ In order to do it, each cell has initially assigned to itself an array of *m* = 
 
 Each element of the array is the probability of that cell is labelled as λ.
 In addition, a matrix of compatibility coefficients is used and each cell of this matrix contains a coefficient that measures the strength compatibility between cells.
-So basically, the relaxation labelling solver takes as input an initial array of probabilities (dened above) and for all cells of the sudoku it updates the array according to the matrix of compatibility coecients until a certain convergence point is reached, from now on the solver stops the updates of probabilities and it assigns for each non valued cell a value according to the most likely number (the choice with higher probability).
+So basically, the relaxation labelling solver takes as input an initial array of probabilities (defined above) and for all cells of the sudoku it updates the array according to the matrix of compatibility coefficients until a certain convergence point is reached, from now on the solver stops the updates of probabilities and it assigns for each non valued cell a value according to the most likely number (the choice with higher probability).
 
 ### 5.2 Performance
 Performances of the solver are calculated by giving as input to the solver different sudokus of various difficulties, in particular each resolution of a single sudoku is repeated 100 times in order to have a better approximation of the results.
