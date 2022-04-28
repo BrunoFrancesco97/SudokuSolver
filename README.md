@@ -2,7 +2,7 @@
 
 Assignment solved in "**Artificial Intelligence: Knowledge Representation and planning**" course at Ca'Foscari University, check the <a href="https://github.com/BrunoFrancesco97/SudokuSolver/blob/main/DOCUMENTATION/REPORT.pdf">report</a> for a project explanation.
 
-## Requirements:
+## Description of the project:
 
 Write a solver for sudoku puzzles using a constraint satisfaction approach based on constraint propagation and backtracking, and one based on Relaxation Labeling. compare the approaches, their strengths and weaknesses.
 A sudoku puzzle is composed of a square 9x9 board divided into 3 rows and 3 columns of smaller 3x3 boxes. The goal is to fill the board with digits from 1 to 9 such that
